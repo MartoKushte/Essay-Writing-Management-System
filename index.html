@@ -1,0 +1,46 @@
+<!doctype html>
+<head>
+<title>
+	Writer's Bay
+</title>
+<link rel="stylesheet" href="jquery-ui-1.11.2/jquery-ui.min.css">
+<link rel="stylesheet" href="base.css">
+<script src="jquery-ui-1.11.2/external/jquery/jquery.js"></script>
+<script src="jquery-ui-1.11.2/jquery-ui.min.js"></script>
+</head>
+<body>
+<div class="wrapper">
+
+<div class='lists'>
+<ul>
+<li><a href="availableOrders.html">Available orders</a></li>
+<li><a href="currentOrders.html">Current orders</a></li>
+<li><a href="bids.html">Bids</a></li>
+<li><a href="disputeOrders.html">Dispute Orders</a></li>
+<li><a href="revisionOrders.html">Revision Orders</a></li>
+<li><a href="finishedOrders.html">Finished Orders</a></li>
+<li><a href="profile.html">Profile</a></li>
+<li><a href="dashboards.html">My dashboards</a></li>
+<li><a href="messages.html">Messages</a></li>
+<li><a href="Financial Overview.html">Financial Overview</a></li>
+<li><a href="news.html">News</a></li>
+<div>
+<div class='content'>
+	This is where content will reside. Why is the text wrapping?
+</div>
+
+<script>
+$.ajax({ 
+"type":"POST", 
+"url":"user/availableOrders.php", 
+"success":function(data){ 
+$(".content") 
+.css("background","yellow") 
+.html(data); 
+} 
+}); 
+</script>
+</div>
+</body>
+
+
