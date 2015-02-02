@@ -1,0 +1,58 @@
+<!doctype html>
+<head>
+<title>
+	Writer's Bay
+</title>
+<link rel="stylesheet" href="../jquery-ui-1.11.2/jquery-ui.min.css">
+<link rel="stylesheet" href="../base.css">
+<script src="../jquery-ui-1.11.2/external/jquery/jquery.js"></script>
+<script src="../jquery-ui-1.11.2/jquery-ui.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../datetimepicker/jquery.datetimepicker.css"/>
+<script src="../datetimePicker/jquery.datetimepicker.js"></script>
+</head>
+<body>
+<div class="wrapper">
+<table class="uploadOrder">
+<form action='uploadOrder.php' method="post" enctype="multipart/form-data">
+<tr><td>Enter Order No: <input class='input' type='text' name='orderNo'></td><td>Order Title: <input class='input' type='text' name='title'></td><td>Price Per Page(Kshs): <input class='input' type='number' value='200' name='price'></td><td>No. of Pages: <input class='input' type='number' name='numberOfPages'></td></tr>
+<tr><td colspan='2'>Order instructions <textarea class='input' rows="20" cols="70" placeholder="" name='orderInstructions'> 
+</textarea></td><td>Date Due: <input  id='date' type="text" name='dateDue'>
+<script type="text/javascript">
+$('#date').datetimepicker({
+dayOfWeekStart : 1,
+lang:'en',
+disabledDates:['1986/01/08','1986/01/09','1986/01/10'],
+startDate:	'1986/01/05'
+});
+$('#date').datetimepicker({value:'2015/04/15 12:00',step:10});
+</script>
+</td><td>Academic Level: <select class='input' name='academicLevel'>
+  <option value="High School">High School</option>
+  <option value="College">College</option>
+  <option value="Undergraduate">UnderGraduate</option>
+  <option value="Masters">Masters</option>
+  <option value="PHD">PHD</option>
+</select></td></tr>
+<tr><td>Course: <select class='input' name='academicLevel'>
+  <option value="High School">High School</option>
+  <option value="College">College</option>
+  <option value="Undergraduate">UnderGraduate</option>
+  <option value="Masters">Masters</option>
+  <option value="PHD">PHD</option></select></td><td>No of Sources Required: <input class='input' type="number" name="sources"></td><td>Digital Sources Required:<input type="radio" class='input' name= "digital" id="yes" value="yes" checked> No: <input  class='input' type="radio" name="digital" id="no" value="no" </td>
+<td>Paper Format: <select class='input' name='paperFormat'>
+  <option value="APA">APA</option>
+  <option value="MLA">MLA</option>
+  <option value="Chicago">Chicago</option>
+  <option value="Turabian">Turabian</option>
+  <option value="Harvard">Harvard</option></select></td></tr>
+  <tr><td>Spacing: <select name='spacing'>
+  <option value="Double Spaced">Double Spaced</option>
+  <option value="Single Spaced">Single Spaced</option>
+</select></td><td> Power Point Slides <input type='number' name='powerPoint'></td>
+<td><input type="file" class="input" id="file" name="files" multiple=""></td></tr>
+<tr><td colspan='4'><input class='input' type='submit' value='Upload file'></td><td></td></tr>
+</form></table>
+</div>
+</body>
+
+

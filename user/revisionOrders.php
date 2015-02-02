@@ -1,5 +1,5 @@
 <?php
-require_once ('functions.php');
+require_once ('../connect.php');
 $tableName=$_REQUEST['tableName'];
 $query="select ordernumber,title,pages,dateDue,description,discpline,academicLevel,course from ".$tableName. " where status='Revision'";
 $result=processQuery($query);

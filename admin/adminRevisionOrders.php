@@ -1,7 +1,6 @@
 <?php
 require_once ('../connect.php');
-$tableName=$_REQUEST['tableName'];
-$query="select ordernumber,title,pages,dateDue,description,discpline,academicLevel,course from ".$tableName. " where status='Current'";
+$query="select ordernumber,title,pages,dateDue,discpline,academicLevel,course from orders where status='Revision'";
 $result=processQuery($query);
 $num = mysql_num_rows($result);
 if (mysql_num_rows($result))
@@ -13,13 +12,13 @@ for ($j = 0 ; $j < $num ; ++$j)
  {
      $row = mysql_fetch_row($query);
      
-echo "<tr><a href='getOrder.php?$row[0]'><td> $row[0]  </td>";
+echo "<tr><a href='getAdminOrder.php?$row[0]'><td> $row[0]  </td>";
 echo "<td>$row[1]  </td><td>$row[2] </td><td>$row[3] </td><td>$row[4] </td><td>$row[5] </td></a></tr>";
 
  }//end inner for
 }
 else
 {
-	echo"You have no current orders";
+	echo"No orders available currently";
 }
 ?>
